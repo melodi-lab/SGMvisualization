@@ -5,6 +5,7 @@ import math
 import csv
 from random import random
 from collections import Counter
+import os
 # global circle_radius
 # global obs_x_position
 # global theo_x_position
@@ -283,12 +284,14 @@ def read_and_process_one_dataset(inFile, outFile):
 for i in xrange(100):
     colorIndex.append((random(), random(), random()))
 
-dataset1 = read_and_process_one_dataset('matchings.txt', 'figures')
+dir = 'figures'
+if not os.path.exists(dir):
+    os.makedirs(dir)
+dataset1 = read_and_process_one_dataset('matchings.txt', dir)
 
 # dataset2 = read_and_process_one_dataset('matchings1.txt', 'figures0')
 # dataset2 = read_and_process_one_dataset('matchings0.txt', 'figure')
 
-diff = 0
 
 
 
