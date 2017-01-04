@@ -146,7 +146,7 @@ def drawAll(datas, num_by, filename, differ):
             matchedTheo.add(i)
             matchedTheo.add(i + 2 * num_by)
 
-    print matchedTheo
+    #print matchedTheo
     all_mz = list(set([x[1] for x in obs_point]).union(
         set([x[1] for x in theo_point])))
 
@@ -255,12 +255,12 @@ def read_and_process_one_dataset(inFile, outFile):
     differ2 = []
     for i in xrange(len(dataset[0])):
         if not dataset[0][i][-1] == dataset[1][i][-1]:
-            print i
+            #print i
             if dataset[0][i][-1] == 1:
                 differ1.append(i)
             else:
                 differ2.append(i)    
-    print differ1, differ2            
+    #print differ1, differ2            
     
     #drawAll(dataset[0], num_bion[0] / 4, '%s/%d.pdf' % (outFile, 0), differ1)
     #drawAll(dataset[1], num_bion[1] / 4, '%s/%d.pdf' % (outFile, 1), differ2)
@@ -283,7 +283,7 @@ def read_and_process_one_dataset(inFile, outFile):
 for i in xrange(100):
     colorIndex.append((random(), random(), random()))
 
-dataset1 = read_and_process_one_dataset('matchings_one.txt', 'figures')
+dataset1 = read_and_process_one_dataset('matchings.txt', 'figures')
 
 # dataset2 = read_and_process_one_dataset('matchings1.txt', 'figures0')
 # dataset2 = read_and_process_one_dataset('matchings0.txt', 'figure')
